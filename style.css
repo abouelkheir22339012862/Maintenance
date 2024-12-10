@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --background-color: #f7fff7;
+    --text-color: #1a535c;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+nav {
+    background: var(--white);
+    padding: 1rem 0;
+    position: relative;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img {
+    width: 80px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 1.5rem;
+}
+
+nav .nav-links a {
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.hero {
+    background: url('./img/home_bg.jpeg') center center/cover no-repeat;
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero h1 span {
+    color: var(--secondary-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+#about {
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-content img {
+    flex: 1 1 45%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.about-content .text {
+    flex: 1 1 45%;
+    padding: 1rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+#offers {
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+#offers h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.offers-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.offer-item {
+    background: var(--background-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.offer-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.offer-item h3 {
+    margin: 1rem 0;
+}
+
+.offer-item p {
+    margin-bottom: 0.5rem;
+}
+
+.offer-item .price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#menu {
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background: var(--background-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1 1 200px;
+    max-width: 250px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    margin: 1rem 0;
+}
+
+.menu-item .price {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+#daytime {
+    padding: 5rem 0;
+    background: url('./img/daytime_bg.jpeg') center center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+}
+
+.daytime-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.daytime-item {
+    flex: 1 1 200px;
+    margin: 1rem;
+}
+
+.daytime-item img {
+    width: 80px;
+}
+
+.daytime-item h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.daytime-item p {
+    font-size: 1rem;
+}
+
+#gallery {
+    padding: 5rem 0;
+}
+
+#gallery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#contact {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-content form {
+    flex: 1 1 45%;
+    padding: 1rem;
+}
+
+.contact-content form input,
+.contact-content form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-content form button {
+    width: 100%;
+}
+
+.contact-content .contact-info {
+    flex: 1 1 45%;
+    padding: 1rem;
+}
+
+.contact-content .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-content .contact-info p {
+    margin-bottom: 1rem;
+}
+
+.contact-content .contact-info i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.social-media a {
+    color: var(--text-color);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+footer {
+    background: var(--text-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--white);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-content form,
+    .contact-content .contact-info {
+        flex: 1 1 100%;
+    }
+}
