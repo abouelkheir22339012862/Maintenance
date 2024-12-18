@@ -1,396 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
-
-:root {
-    --primary-color: #ff6b6b;
-    --secondary-color: #4ecdc4;
-    --background-color: #f7fff7;
-    --text-color: #1a535c;
-    --white: #ffffff;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: 'Cairo', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+  background-color: #3d64e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
+  background-color: #ffffff;
+  width: 90vw;
+  max-width: 50em;
+  padding: 2em 2.5em;
+  border-radius: 0.62em;
+  box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
 }
 
-nav {
-    background: var(--white);
-    padding: 1rem 0;
-    position: relative;
+/* Title */
+.container h1 {
+  text-align: center;
+  color: #222a43;
+  margin-bottom: 1.5em;
 }
 
-nav .container {
-    display: flex;
-    justify-content: space-between;
+/* Sections */
+.search-section,
+.compare-section {
+  margin-bottom: 2em;
+}
+
+.search-section h2,
+.compare-section h2 {
+  color: #222a43;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+/* Search Wrapper */
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (min-width: 600px) {
+  .search-wrapper {
+    flex-direction: row;
     align-items: center;
+  }
 }
 
-nav .logo img {
-    width: 80px;
+.search-wrapper input {
+  flex: 1;
+  font-size: 1em;
+  padding: 0.8em 0.62em;
+  border: 2px solid #3d64e6;
+  border-radius: 0.5em;
+  outline: none;
+  color: #222a43;
 }
 
-nav .nav-links {
-    list-style: none;
-    display: flex;
+.search-wrapper button {
+  font-size: 1em;
+  background-color: #3d64e6;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-nav .nav-links li {
-    margin-left: 1.5rem;
+.search-wrapper button:hover {
+  background-color: #2b4bb7;
 }
 
-nav .nav-links a {
-    color: var(--text-color);
-    font-weight: bold;
-    transition: color 0.3s;
+/* Result Sections */
+#result,
+#comparison-result {
+  margin-top: 1.5em;
 }
 
-nav .nav-links a:hover {
-    color: var(--primary-color);
+.country-card {
+  background-color: #f9f9f9;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5em;
 }
 
-.menu-toggle {
-    display: none;
-    cursor: pointer;
+.country-card img.flag-img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 1em auto;
 }
 
-.menu-toggle i {
-    font-size: 24px;
-    color: var(--text-color);
+.country-card h2 {
+  font-weight: 600;
+  color: #222a43;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
 }
 
-.hero {
-    background: url('./img/home_bg.jpeg') center center/cover no-repeat;
-    color: var(--white);
-    padding: 5rem 0;
-    text-align: center;
+.data-wrapper {
+  margin-bottom: 0.8em;
+  display: flex;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.data-wrapper h4 {
+  width: 120px;
+  font-weight: 500;
+  color: #222a43;
 }
 
-.hero h1 span {
-    color: var(--secondary-color);
+.data-wrapper span {
+  color: #5d6274;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
+/* Comparison Section */
+#comparison-result {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
-.btn {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+@media (min-width: 768px) {
+  #comparison-result {
+    flex-direction: row;
+  }
 }
 
-.btn:hover {
-    background: var(--secondary-color);
+.comparison-card {
+  flex: 1;
 }
 
-#about {
-    padding: 5rem 0;
+.distance-info {
+  text-align: center;
+  font-size: 1.1em;
+  color: #ff465a;
+  margin-top: 1em;
 }
 
-.about-content {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.about-content img {
-    flex: 1 1 45%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.about-content .text {
-    flex: 1 1 45%;
-    padding: 1rem;
-}
-
-.about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-content p {
-    margin-bottom: 1rem;
-}
-
-#offers {
-    padding: 5rem 0;
-    background: var(--white);
-    text-align: center;
-}
-
-#offers h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.offers-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.offer-item {
-    background: var(--background-color);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    flex: 1 1 250px;
-    max-width: 300px;
-    text-align: center;
-}
-
-.offer-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.offer-item h3 {
-    margin: 1rem 0;
-}
-
-.offer-item p {
-    margin-bottom: 0.5rem;
-}
-
-.offer-item .price {
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-#menu {
-    padding: 5rem 0;
-    background: var(--white);
-    text-align: center;
-}
-
-#menu h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.menu-item {
-    background: var(--background-color);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    flex: 1 1 200px;
-    max-width: 250px;
-    text-align: center;
-}
-
-.menu-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.menu-item h3 {
-    margin: 1rem 0;
-}
-
-.menu-item .price {
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-top: 0.5rem;
-}
-
-#daytime {
-    padding: 5rem 0;
-    background: url('./img/daytime_bg.jpeg') center center/cover no-repeat;
-    color: var(--white);
-    text-align: center;
-}
-
-.daytime-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.daytime-item {
-    flex: 1 1 200px;
-    margin: 1rem;
-}
-
-.daytime-item img {
-    width: 80px;
-}
-
-.daytime-item h3 {
-    font-size: 1.8rem;
-    margin: 1rem 0;
-}
-
-.daytime-item p {
-    font-size: 1rem;
-}
-
-#gallery {
-    padding: 5rem 0;
-}
-
-#gallery h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-#contact {
-    padding: 5rem 0;
-    background: var(--white);
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.contact-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.contact-content form {
-    flex: 1 1 45%;
-    padding: 1rem;
-}
-
-.contact-content form input,
-.contact-content form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact-content form button {
-    width: 100%;
-}
-
-.contact-content .contact-info {
-    flex: 1 1 45%;
-    padding: 1rem;
-}
-
-.contact-content .contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.contact-content .contact-info p {
-    margin-bottom: 1rem;
-}
-
-.contact-content .contact-info i {
-    color: var(--primary-color);
-    margin-right: 0.5rem;
-}
-
-.social-media a {
-    color: var(--text-color);
-    margin-right: 1rem;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-media a:hover {
-    color: var(--primary-color);
-}
-
-footer {
-    background: var(--text-color);
-    color: var(--white);
-    text-align: center;
-    padding: 1rem 0;
-}
-
-footer a {
-    color: var(--primary-color);
-}
-
-@media (max-width: 768px) {
-    nav .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--white);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        text-align: center;
-    }
-
-    nav .nav-links.active {
-        display: flex;
-    }
-
-    nav .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-
-    .contact-content form,
-    .contact-content .contact-info {
-        flex: 1 1 100%;
-    }
+/* Error Messages */
+.error {
+  color: #ff465a;
+  text-align: center;
+  margin-top: 1em;
 }
